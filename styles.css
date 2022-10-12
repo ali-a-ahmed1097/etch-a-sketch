@@ -1,7 +1,7 @@
 .grid-container {
     border: 2px solid black;
-    width: 544px;
-    height: 544px;
+    width: 512px;
+    height: 512px;
     margin-right: auto;
     margin-left: auto;
     display: flex;
@@ -12,4 +12,5 @@
     border: 1px solid green;
     width: 32px;
     height: 32px;
+    box-sizing: border-box;
 }

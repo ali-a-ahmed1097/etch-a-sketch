@@ -18,7 +18,7 @@ function gridDraw(gContainer){
         })
     });
 
-    gContainer.addEventListener('mouseup', function () {
+    window.addEventListener('mouseup', function () {
         squares.forEach(function (sqr) {
             sqr.removeEventListener('mouseover', setSquareColor);
         });
