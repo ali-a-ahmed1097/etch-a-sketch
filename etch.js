@@ -43,8 +43,8 @@ function createGrid(gridWH) {
 const slider = document.querySelector('.slider');
 const sliderTxt = document.querySelector('#slider-value');
 slider.addEventListener('input', function () {
-    sliderTxt.textContent = `Grid size: ${slider.value}x${slider.value}`;
-    createGrid(slider.value);
+    sliderTxt.textContent = `Grid size: ${2**slider.value}x${2**slider.value}`;
+    createGrid(2**slider.value);
 });
 
-createGrid(slider.value);
+createGrid(2**slider.value);
