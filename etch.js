@@ -26,6 +26,7 @@ function gridDraw(gContainer){
 
 function createGrid(gridWH) {
     const container = document.querySelector('.grid-container');
+    const glButton = document.querySelector('#grid-lines');
     const sqrsize = GRID_SIZE / gridWH;
 
     container.innerHTML = "";
@@ -35,7 +36,9 @@ function createGrid(gridWH) {
         const sqr = document.createElement('div');
         sqr.setAttribute('style', `width: ${sqrsize}px; height: ${sqrsize}px;`);
         sqr.classList.add('grid-square');
+        sqr.classList.add('grid-square-border');
         container.appendChild(sqr);
+        glButton.addEventListener('click', () => sqr.classList.toggle('grid-square-border'));
     }
     gridDraw(container);
 }

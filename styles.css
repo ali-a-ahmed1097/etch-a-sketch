@@ -8,8 +8,11 @@
     flex-flow: row wrap;
 }
 
+.grid-square-border {
+    border: 1px solid lightgray;
+}
+
 .grid-square {
-    border: 1px solid green;
     box-sizing: border-box;
 }
 
