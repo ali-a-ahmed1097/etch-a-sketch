@@ -1,0 +1,15 @@
+.grid-container {
+    border: 2px solid black;
+    width: 544px;
+    height: 544px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.grid-square {
+    border: 1px solid green;
+    width: 32px;
+    height: 32px;
+}
