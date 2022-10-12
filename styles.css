@@ -10,7 +10,9 @@
 
 .grid-square {
     border: 1px solid green;
-    width: 32px;
-    height: 32px;
     box-sizing: border-box;
+}
+
+.slider-container {
+    text-align: center;
 }

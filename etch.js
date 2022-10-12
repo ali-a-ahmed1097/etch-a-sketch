@@ -1,8 +1,7 @@
-const GRID_WIDTH = 16;
-const GRID_HEIGHT = 16;
+const GRID_SIZE = 512;
 
 function setSquareColor(e) {
-    e.target.setAttribute('style', 'background-color: black;')
+    e.target.setAttribute('style', `background-color: black; ${e.target.getAttribute('style')}`)
 }
 
 function gridDraw(gContainer){
@@ -25,15 +24,27 @@ function gridDraw(gContainer){
     });
 }
 
-function createGrid() {
+function createGrid(gridWH) {
     const container = document.querySelector('.grid-container');
-    for (let i = 0; i < GRID_WIDTH*GRID_HEIGHT; i++)
+    const sqrsize = GRID_SIZE / gridWH;
+
+    container.innerHTML = "";
+
+    for (let i = 0; i < gridWH*gridWH; i++)
     {
         const sqr = document.createElement('div');
+        sqr.setAttribute('style', `width: ${sqrsize}px; height: ${sqrsize}px;`);
         sqr.classList.add('grid-square');
         container.appendChild(sqr);
     }
     gridDraw(container);
 }
 
-createGrid();
+const slider = document.querySelector('.slider');
+const sliderTxt = document.querySelector('#slider-value');
+slider.addEventListener('input', function () {
+    sliderTxt.textContent = `Grid size: ${slider.value}x${slider.value}`;
+    createGrid(slider.value);
+});
+
+createGrid(slider.value);
