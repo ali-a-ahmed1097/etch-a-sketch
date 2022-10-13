@@ -1,7 +1,13 @@
 const GRID_SIZE = 512;
 
+function sliceBg(atr) {
+    if (atr.includes('background-color:'))
+        atr = atr.slice(atr.indexOf(';')+1, atr.length+1).trim();
+    return atr;
+}
+
 function setSquareColor(e) {
-    e.target.setAttribute('style', `background-color: black; ${e.target.getAttribute('style')}`)
+    e.target.setAttribute('style', `background-color: black; ${sliceBg(e.target.getAttribute('style'))}`);
 }
 
 function gridDraw(gContainer){
@@ -27,6 +33,7 @@ function gridDraw(gContainer){
 function createGrid(gridWH) {
     const container = document.querySelector('.grid-container');
     const glButton = document.querySelector('#grid-lines');
+    const clearButton = document.querySelector('#clear');
     const sqrsize = GRID_SIZE / gridWH;
 
     container.innerHTML = "";
@@ -39,6 +46,8 @@ function createGrid(gridWH) {
         sqr.classList.add('grid-square-border');
         container.appendChild(sqr);
         glButton.addEventListener('click', () => sqr.classList.toggle('grid-square-border'));
+        clearButton.addEventListener('click',() =>
+        sqr.setAttribute('style', `background-color: white; ${sliceBg(sqr.getAttribute('style'))}`));
     }
     gridDraw(container);
 }
