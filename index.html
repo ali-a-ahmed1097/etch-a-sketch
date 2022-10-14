@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,31 @@
     <link rel="stylesheet" href="./styles.css">
     <title>Etch-A-Sketch</title>
 </head>
+
 <body>
     <h1 style="text-align: center;">Etch-A-Sketch: Browser Edition</h1>
-    <div class="grid-container"></div>
+
+    <div class="main">
+        <div class="color-container">
+            <div class="color-square" id="aqua" style="background-color: aqua;"></div>
+            <div class="color-square" id="black" style="background-color: black;"></div>
+            <div class="color-square" id="blue" style="background-color: blue;"></div>
+            <div class="color-square" id="fuchsia" style="background-color: fuchsia;"></div>
+            <div class="color-square" id="gray" style="background-color: gray;"></div>
+            <div class="color-square" id="green" style="background-color: green;"></div>
+            <div class="color-square" id="lime" style="background-color: lime;"></div>
+            <div class="color-square" id="maroon" style="background-color: maroon;"></div>
+            <div class="color-square" id="navy" style="background-color: navy;"></div>
+            <div class="color-square" id="olive" style="background-color: olive;"></div>
+            <div class="color-square" id="purple" style="background-color: purple;"></div>
+            <div class="color-square" id="red" style="background-color: red;"></div>
+            <div class="color-square" id="silver" style="background-color: silver;"></div>
+            <div class="color-square" id="teal" style="background-color: teal;"></div>
+            <div class="color-square" id="white" style="background-color: white;"></div>
+            <div class="color-square" id="yellow" style="background-color: yellow;"></div>
+        </div>
+        <div class="grid-container"></div>
+    </div>
 
     <div class="slider-container">
         <input type="range" min="0" max="6" value="4" class="slider">
@@ -21,7 +44,8 @@
 
     <div class="grid-buttons">
         <button id="grid-lines">Toggle grid lines</button>
-        <button id="clear">Clear</button>
+        <button id="clear">Clear grid</button>
     </div>
 </body>
+
 </html>
