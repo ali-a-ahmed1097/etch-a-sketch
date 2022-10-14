@@ -1,4 +1,5 @@
 const GRID_SIZE = 512;
+let currentColor = 'black' // Could use a local variable, but this is much faster
 
 function sliceBg(atr) {
     if (atr.includes('background-color:'))
@@ -6,8 +7,15 @@ function sliceBg(atr) {
     return atr;
 }
 
+function colorPicked(e) {
+    const unpicked = document.querySelector('.picked');
+    unpicked.classList.remove('picked');
+    e.target.classList.add('picked');
+    currentColor = e.target.id;
+}
+
 function setSquareColor(e) {
-    e.target.setAttribute('style', `background-color: black; ${sliceBg(e.target.getAttribute('style'))}`);
+    e.target.setAttribute('style', `background-color: ${currentColor}; ${sliceBg(e.target.getAttribute('style'))}`);
 }
 
 function gridDraw(gContainer){
@@ -57,6 +65,11 @@ const sliderTxt = document.querySelector('#slider-value');
 slider.addEventListener('input', function () {
     sliderTxt.textContent = `Grid size: ${2**slider.value}x${2**slider.value}`;
     createGrid(2**slider.value);
+});
+
+const cSqr = document.querySelectorAll('.color-square');
+cSqr.forEach(function (color) {
+    color.addEventListener('click', colorPicked);
 });
 
 createGrid(2**slider.value);

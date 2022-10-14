@@ -1,6 +1,9 @@
 .main {
     display: flex;
     justify-content: center;
+    gap: 1px;
+    margin-right: 24px;
+    flex: 0;
 }
 
 .grid-container {
@@ -9,6 +12,7 @@
     height: 512px;
     display: flex;
     flex-flow: row wrap;
+    flex-shrink: 0;
 }
 
 .grid-square-border {
@@ -41,7 +45,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-end;
 }
+
+.picked { width: 32px; height: 32px;}
 
 #aqua { background-color: aqua; }
 #black { background-color: black; }
